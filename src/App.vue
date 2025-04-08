@@ -9,8 +9,17 @@
 
 <style>
 .app {
-  padding: 40px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 </style> 

@@ -99,42 +99,60 @@ defineExpose({
 <style scoped>
 .chat-layout {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   height: calc(100vh - 100px);
+  padding: 20px;
+  background: #f0f2f5;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .chat-history {
-  width: 250px;
+  width: 280px;
+  min-width: 280px;
   background: white;
-  border-radius: 8px;
-  padding: 15px;
-  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
   overflow-y: auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .task-status {
-  width: 250px;
+  width: 280px;
+  min-width: 280px;
   background: white;
-  border-radius: 8px;
-  padding: 15px;
-  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .chat-container {
   flex: 1;
+  min-width: 0; /* 防止flex子项溢出 */
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .history-item {
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
 }
 
 .history-item:hover {
-  background: #f5f5f5;
+  background: #f8f9fa;
+  transform: translateY(-1px);
 }
 
 .history-item.active {
@@ -161,22 +179,20 @@ defineExpose({
   text-overflow: ellipsis;
 }
 
-h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
-}
-
 .status-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   opacity: 0.5;
   transition: all 0.3s ease;
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
-  border: 1px solid #eee;
-  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+}
+
+.status-item:hover {
+  background: #f8f9fa;
 }
 
 .status-item.active {
@@ -186,14 +202,15 @@ h3 {
 }
 
 .status-icon {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #ddd;
+  background: #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .status-item.active .status-icon {
@@ -203,18 +220,19 @@ h3 {
 
 .status-connector {
   width: 2px;
-  height: 20px;
-  background: #ddd;
-  margin-left: 14px;
+  height: 24px;
+  background: #e0e0e0;
+  margin-left: 15px;
 }
 
 .status-text {
   font-size: 0.9em;
   color: #666;
+  transition: all 0.3s ease;
 }
 
 .status-item.active .status-text {
   color: #333;
-  font-weight: bold;
+  font-weight: 600;
 }
 </style> 
